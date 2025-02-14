@@ -28,10 +28,13 @@ resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
 resource env 'Microsoft.App/managedEnvironments@2022-01-01-preview' = {
   name: '${baseName}env'
   location: location
-  dependsOn: [ logs ]
   properties: {
     appLogsConfiguration: {
       destination: 'log-analytics'
+      logAnalyticsConfiguration: {
+        customerId: logs.properties.customerId
+        sharedKey: logs.listKeys().primarySharedKey
+      }
     }
   }
 }
