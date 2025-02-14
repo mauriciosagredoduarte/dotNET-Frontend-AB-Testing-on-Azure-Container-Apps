@@ -28,6 +28,7 @@ resource appInsights 'Microsoft.Insights/components@2020-02-02' = {
 resource env 'Microsoft.App/managedEnvironments@2023-05-01' = {
   name: '${baseName}env'
   location: location
+  dependsOn: [ logs ]
   properties: {
     appLogsConfiguration: {
       destination: 'log-analytics'
