@@ -1,4 +1,4 @@
-param location string = resourceGroup().location
+param location string = 'eastus2'
 
 // create the azure container registry
 resource acr 'Microsoft.ContainerRegistry/registries@2021-09-01' = {
