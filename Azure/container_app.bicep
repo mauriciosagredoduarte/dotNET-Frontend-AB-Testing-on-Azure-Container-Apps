@@ -1,5 +1,5 @@
 param name string
-param location string = 'eastus2'
+param location string = resourceGroup().location
 param containerAppEnvironmentId string
 param repositoryImage string = 'mcr.microsoft.com/azuredocs/containerapps-helloworld:latest'
 param envVars array = []
