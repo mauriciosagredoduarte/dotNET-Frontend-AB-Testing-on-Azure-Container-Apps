@@ -2,7 +2,7 @@
 param configStoreName string = 'appconfig${uniqueString(resourceGroup().id)}'
 
 @description('Specifies the Azure location where the app configuration store should be created.')
-param location string = resourceGroup().location
+param location string = 'eastus2'
 
 @description('Specifies the key of the feature flag.')
 param featureFlagKey string
