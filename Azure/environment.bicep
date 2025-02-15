@@ -1,5 +1,5 @@
 param baseName string = resourceGroup().name
-param location string = 'eastus2'
+param location string = resourceGroup().location
 
 resource logs 'Microsoft.OperationalInsights/workspaces@2021-06-01' = {
   name: '${baseName}logs'
